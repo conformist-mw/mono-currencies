@@ -11,20 +11,8 @@ import CountryInfo from './components/CountryInfo';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      currencies: [],
-    };
+    this.state = {};
   }
-  componentDidMount = () => {
-    fetch('http://localhost:8000/currencies')
-      .then(response => {
-        return response.json();
-      })
-      .then(data => {
-        this.setState({ currencies: data });
-      })
-  }
-
   render() {
     return (
       <div className="App">
