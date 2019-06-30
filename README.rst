@@ -1,6 +1,8 @@
 ===========================================================
-Simple react app inspired by recently released Monobank API
+Currency app by Monobank API
 ===========================================================
+
+Simple react app inspired by recently released Monobank API
 
 Live Demo
 ---------
