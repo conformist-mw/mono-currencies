@@ -1,12 +1,12 @@
 FROM node:10-slim
 ARG NODE_ENV=production
 ENV NODE_ENV $NODE_ENV
+ENV NDOE_PATH=/node_modules
 EXPOSE 3000
 
-RUN mkdir /opt/front
-WORKDIR /opt/front
-COPY package.json package-lock.json* ./
+COPY package.json yarn.lock /
 RUN yarn && yarn cache clean
-ENV PATH /opt/front/node_modules/.bin:$PATH
+ENV PATH /node_modules/.bin:$PATH
+WORKDIR /app
 
-CMD ["yarn"]
+CMD [""]

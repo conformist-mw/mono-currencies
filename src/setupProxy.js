@@ -3,7 +3,7 @@ module.exports = function(app) {
   app.use(
     '/api',
     createProxyMiddleware({
-      target: `http://${process.env.BACKEND_HOST}:5000`,
+      target: `http://${process.env.BACKEND_HOST}`,
       changeOrigin: true,
     })
   );
