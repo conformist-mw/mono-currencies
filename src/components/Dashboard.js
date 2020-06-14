@@ -11,7 +11,7 @@ class Dashboard extends Component {
         };
     }
     componentDidMount = () => {
-        fetch('/currencies')
+        fetch('/api/currencies')
             .then(response => {
                 return response.json();
             })

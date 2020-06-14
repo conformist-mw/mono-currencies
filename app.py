@@ -14,7 +14,7 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/currencies')
+@app.route('/api/currencies')
 def dashboard():
     url = 'https://api.monobank.ua/bank/currency'
     response = request.urlopen(url)
@@ -23,7 +23,7 @@ def dashboard():
     return 'Cannot get currencies from Monobank API', 400
 
 
-@app.route('/country/<code>')
+@app.route('/api/country/<code>')
 def country_code(code):
     url = f'https://restcountries.eu/rest/v2/currency/{code}'
     response = request.urlopen(url)
