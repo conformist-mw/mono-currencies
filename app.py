@@ -1,3 +1,4 @@
+import os
 from urllib import request
 
 from flask import Flask, render_template
@@ -7,6 +8,8 @@ app = Flask(
     template_folder='./build',
     static_folder='./build/static'
 )
+
+DEBUG = os.getenv('DEBUG', False)
 
 
 @app.route('/')
@@ -33,4 +36,4 @@ def country_code(code):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True)
+    app.run(host='0.0.0.0', debug=DEBUG)
