@@ -4,8 +4,8 @@ ENV NODE_ENV $NODE_ENV
 ENV NDOE_PATH=/node_modules
 EXPOSE 3000
 
-COPY package.json yarn.lock /
-RUN yarn && yarn cache clean
+COPY package.json package-lock.json /
+RUN npm && npm cache clean
 ENV PATH /node_modules/.bin:$PATH
 WORKDIR /app
 
