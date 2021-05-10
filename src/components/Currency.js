@@ -3,26 +3,10 @@ import { Card, ListGroup, ListGroupItem } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Timestamp from 'react-timestamp';
 
-const currencyMap = {
-    124: 'cad',
-    203: 'czk',
-    208: 'dkk',
-    348: 'huf',
-    643: 'rub',
-    756: 'chf',
-    826: 'gbp',
-    840: 'usd',
-    933: 'byn',
-    949: 'try',
-    978: 'eur',
-    980: 'uah',
-    985: 'pln',
-}
-
 
 function Currency(props) {
-    const codeA = currencyMap[props.data.currencyCodeA];
-    const codeB = currencyMap[props.data.currencyCodeB];
+    const codeA = props.data.currencyCodeA;
+    const codeB = props.data.currencyCodeB;
     return (
         <div>
             <Card border="success">

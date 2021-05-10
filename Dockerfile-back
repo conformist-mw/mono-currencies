@@ -1,3 +1,6 @@
-FROM tiangolo/uwsgi-nginx-flask:python3.8
-RUN apt-get update && apt-get install -y ca-certificates
-COPY ./app.py /app/main.py
+FROM python:3.9-alpine
+RUN apk add --no-cache ca-certificates
+COPY requirements.txt /
+RUN pip install --no-cache -r /requirements.txt
+WORKDIR /app
+CMD ["python", "/app/main.py"]
