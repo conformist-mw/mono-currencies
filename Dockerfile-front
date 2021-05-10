@@ -1,12 +1,12 @@
-FROM node:10-slim
-ARG NODE_ENV=production
-ENV NODE_ENV $NODE_ENV
-ENV NDOE_PATH=/node_modules
-EXPOSE 3000
+FROM node:16-slim
 
 COPY package.json package-lock.json /
-RUN npm && npm cache clean
+
+ENV NODE_PATH=/node_modules
 ENV PATH /node_modules/.bin:$PATH
+
+RUN npm install
+
 WORKDIR /app
 
-CMD [""]
+CMD ["npm", "start"]

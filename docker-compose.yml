@@ -5,19 +5,22 @@ services:
       context: .
       dockerfile: Dockerfile-back
     ports:
-      - "5000:80"
+      - "5000:5000"
+    environment:
+      DEBUG: 1
+    volumes:
+      - ${PWD}/server:/app
   front:
     build:
       context: .
       dockerfile: Dockerfile-front
-      args:
-        NODE_ENV: development
     ports:
       - "3000:3000"
     volumes:
       - ./:/app
+      - ${PWD}/package.json:/app/src/package.json
     environment:
       BACKEND_HOST: web
-      NODE_ENV: development
+      BACKEND_PORT: 5000
       NODE_PATH: /node_modules
     command: npm start
