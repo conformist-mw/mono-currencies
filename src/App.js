@@ -5,7 +5,7 @@ import './App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Dashboard from './components/Dashboard';
-import CountryInfo from './components/CountryInfo';
+import Countries from './components/Countries';
 
 
 class App extends Component {
@@ -20,7 +20,7 @@ class App extends Component {
           <Header />
           <Container className="mt-5">
             <Route exact path='/' component={Dashboard} />
-            <Route exact path='/country/:code' component={CountryInfo} />
+            <Route exact path='/country/:code' component={Countries} />
           </Container>
           <Footer />
         </Router>
