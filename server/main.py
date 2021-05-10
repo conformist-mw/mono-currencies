@@ -49,8 +49,8 @@ DEBUG = os.getenv('DEBUG', False)
 
 app = Flask(
     __name__,
-    template_folder='./build',
-    static_folder='./build/static'
+    template_folder='../build',
+    static_folder='../build/static'
 )
 cache = Cache(app, config={'CACHE_TYPE': 'SimpleCache', 'DEBUG': DEBUG})
 
