@@ -18,13 +18,23 @@ How to install
 
 .. code:: bash
 
-   pip install requirements.txt
-   npm install
+   docker-compose build
 
 How to run
 ----------
 
-You need to run project in two terminals:
+.. code:: bash
 
-1) ``python app.py``
-2) ``npm start``
+  docker-compose up
+
+Build frontend before deploy
+----------------------------
+
+.. code:: bash
+
+  docker run -it \
+    --rm \
+    -e NODE_ENV=production \
+    -v ${PWD}:/app \
+    -v ${PWD}/package.json:/app/src/package.json \
+    react-currency_front npm run build
