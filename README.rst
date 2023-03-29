@@ -3,11 +3,6 @@ Currency app by Monobank API
 
 Simple react app inspired by recently released Monobank API
 
-Live Demo
----------
-
-`You can try it live here <http://mono-currencies.herokuapp.com/>`_
-
 Project dependencies
 --------------------
 
