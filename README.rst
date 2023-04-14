@@ -33,16 +33,3 @@ Build frontend before deploy
     -v ${PWD}:/app \
     -v ${PWD}/package.json:/app/src/package.json \
     react-currency_front npm run build
-
-
-Update Heroku instance
-----------------------
-
-.. code:: bash
-
-  heroku git:remote -a mono-currencies
-  git checkout -b heroku
-  git add -f build  # ignored production build
-  git add .  # everything needed to update
-  git commit  # commit
-  git push heroku heroku:master
